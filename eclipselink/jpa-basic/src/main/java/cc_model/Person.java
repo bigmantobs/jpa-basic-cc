@@ -1,17 +1,16 @@
 package cc_model;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
 
     @OneToMany
     private List<CreditCard> creditCards = new ArrayList<>();
@@ -22,13 +21,20 @@ public class Person {
             inverseJoinColumns = @JoinColumn(name = "address_fk"))
     private List<Address> addresses = new ArrayList<>();
 
-
     public Long getId() {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<CreditCard> getCreditCards() {
@@ -46,17 +52,4 @@ public class Person {
     public void addAddress(Address address) {
         this.getAddresses().add(address);
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @OneToMany
-    private List<CreditCard> ccList = new ArrayList<CreditCard>();
-
 }
-

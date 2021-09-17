@@ -8,13 +8,13 @@
         <class>cc_model.Bank</class>
         <class>cc_model.CreditCard</class>
         <class>cc_model.Person</class>
-        <class>cc_model.Pincode</class>
+        <class>cc_model.PinCode</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
                       <!-- TODO Change the path in the value of the property "javax.persistence.jdbc.url" here! -->
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:derby:C:\Users\tobia\OneDrive\Documents\UiB PU Master\DAT250\finaltest;create=true"/>
+                      value="jdbc:derby:C:\Users\tobia\OneDrive\Documents\UiB PU Master\DAT250\last_try;create=false"/>
             <property name="javax.persistence.jdbc.user" value="test"/>
             <property name="javax.persistence.jdbc.password" value="test"/>
 

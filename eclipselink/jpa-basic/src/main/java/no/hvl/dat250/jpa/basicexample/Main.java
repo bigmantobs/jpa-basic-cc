@@ -35,7 +35,7 @@ public class Main {
         cc2.setBalance(1);
         em.persist(cc2);
 
-        Pincode pin = new Pincode();
+        PinCode pin = new PinCode();
         pin.setPinCode("123");
         pin.setCount(1);
         em.persist(pin);
@@ -51,7 +51,7 @@ public class Main {
         bank.addCreditCard(cc2);
         person.addCreditCard(cc1);
         person.addCreditCard(cc2);
-        address.addInhabitants(person);
+        address.addInhabitant(person);
         person.addAddress(address);
 
         em.getTransaction().commit();

@@ -1,56 +1,51 @@
 package cc_model;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Address {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String street;
     private int number;
 
     @ManyToMany(mappedBy = "addresses")
-    private List<Person> inhabitants = new ArrayList<Person>();
+    private List<Person> inhabitants = new ArrayList<>();
 
     public Long getId() {
         return id;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public List<Person> getInhabitants() {
-        return inhabitants;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
+    public String getStreet() {
+        return street;
+    }
+
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    public int getNumber() {
+        return number;
     }
 
     public void setNumber(int number) {
         this.number = number;
     }
 
-    public void setInhabitants(List<Person> inhabitants) {
-        this.inhabitants = inhabitants;
+    public List<Person> getInhabitants() {
+        return inhabitants;
     }
 
-    public void addInhabitants(Person person) {
-        this.inhabitants.add(person);
+    public void addInhabitant(Person person) {
+        this.getInhabitants().add(person);
     }
-
 }
-

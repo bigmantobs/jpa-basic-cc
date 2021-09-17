@@ -6,10 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Pincode {
+public class PinCode {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String pinCode;
@@ -19,24 +19,23 @@ public class Pincode {
         return id;
     }
 
-    public String getPinCode() {
-        return pinCode;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getPinCode() {
+        return pinCode;
     }
 
     public void setPinCode(String pinCode) {
         this.pinCode = pinCode;
     }
 
+    public int getCount() {
+        return count;
+    }
+
     public void setCount(int count) {
         this.count = count;
     }
 }
-

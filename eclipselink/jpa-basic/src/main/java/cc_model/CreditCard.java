@@ -5,49 +5,53 @@ import javax.persistence.*;
 public class CreditCard {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int number;
     private int limit;
     private int balance;
 
     @OneToOne
-    private Pincode pincode;
+    private PinCode pincode;
+
+    @ManyToOne
+    @JoinTable(name = "jnd_bank_card", joinColumns = @JoinColumn(name = "card_fk"),
+            inverseJoinColumns = @JoinColumn(name = "bank_fk"))
     private Bank bank;
 
     public int getNumber() {
         return number;
     }
 
-    public int getLimit() {
-        return limit;
-    }
-
-    public int getBalance() {
-        return balance;
-    }
-
-    public Pincode getPincode() {
-        return pincode;
-    }
-
-    public Bank getBank() {
-        return bank;
-    }
-
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public int getLimit() {
+        return limit;
     }
 
     public void setLimit(int limit) {
         this.limit = limit;
     }
 
+    public int getBalance() {
+        return balance;
+    }
+
     public void setBalance(int balance) {
         this.balance = balance;
     }
 
-    public void setPincode(Pincode pincode) {
+    public PinCode getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(PinCode pincode) {
         this.pincode = pincode;
+    }
+
+    public Bank getBank() {
+        return bank;
     }
 
     public void setBank(Bank bank) {
