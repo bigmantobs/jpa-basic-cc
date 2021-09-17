@@ -2,15 +2,19 @@
 <persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
-    <persistence-unit name="todos" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="transactions" transaction-type="RESOURCE_LOCAL">
 
-        <class>no.hvl.dat250.jpa.basicexample.Todo</class>
+        <class>cc_model.Address</class>
+        <class>cc_model.Bank</class>
+        <class>cc_model.CreditCard</class>
+        <class>cc_model.Person</class>
+        <class>cc_model.Pincode</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
                       <!-- TODO Change the path in the value of the property "javax.persistence.jdbc.url" here! -->
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:derby:C:\Source\testdb;create=true"/>
+                      value="jdbc:derby:C:\Users\tobia\OneDrive\Documents\UiB PU Master\DAT250\finaltest;create=true"/>
             <property name="javax.persistence.jdbc.user" value="test"/>
             <property name="javax.persistence.jdbc.password" value="test"/>
 
